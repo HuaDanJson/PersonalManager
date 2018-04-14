@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llMainActivityAll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#8DEEEE"
+        android:text="个人投资管理系统"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+   <Button
+       android:id="@+id/btnMainActivityKnowledge"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="30dp"
+       android:textColor="#ffff00"
+       android:background="@drawable/login_btn_register_false"
+       android:layout_gravity="center_horizontal"
+       android:text="投资知识库" />
+    <Button
+        android:id="@+id/btnMainActivityKind"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff00"
+        android:background="@drawable/login_btn_register_false"
+        android:layout_marginTop="30dp"
+        android:text="投资类别" />
+    <Button
+        android:id="@+id/btnMainActivityStatistics"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffff00"
+        android:background="@drawable/login_btn_register_false"
+        android:layout_height="wrap_content"
+        android:text="总数据统计" />
+    <Button
+        android:id="@+id/btnMainActivityAnalysis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffff00"
+        android:background="@drawable/login_btn_register_false"
+        android:layout_gravity="center_horizontal"
+        android:text="总数据分析" />
+
+    <Button
+        android:id="@+id/btnMainActivityChangeBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffff00"
+        android:background="@drawable/login_btn_register_false"
+        android:layout_gravity="center_horizontal"
+        android:text="更换背景" />
+
+</LinearLayout>
