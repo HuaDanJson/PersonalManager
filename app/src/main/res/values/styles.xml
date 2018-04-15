@@ -16,4 +16,9 @@
         <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
     </style>
 
+    <!-- 启动页主题 -->
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="android:windowBackground">@drawable/welecome_bg</item>-->
+    </style>
+
 </resources>
