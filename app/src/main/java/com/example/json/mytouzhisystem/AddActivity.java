@@ -42,6 +42,10 @@ public class AddActivity extends BaseActivity {
         noteEditText_add_content = (NoteEditText) findViewById(R.id.noteEditText_add_content);
         tvAddActivityTitle.setText(getIntent().getStringExtra("name"));
         editText_add_time.setText(formatTime());
+        if ("记事本".equals(getIntent().getStringExtra("name"))) {
+            editText_add_title.setHint("请输入标题");
+            noteEditText_add_content.setHint("请输入内容");
+        }
     }
 
     public void clickView(View view) {

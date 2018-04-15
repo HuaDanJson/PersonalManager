@@ -124,6 +124,10 @@
         <activity
             android:name=".DBBaoXianActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".WebViewActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".NotXiangQingActivity"
             android:screenOrientation="portrait"/>
