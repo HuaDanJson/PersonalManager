@@ -42,6 +42,7 @@ public class NotXiangQingActivity extends BaseActivity {
     Button btnNotXiangQingActivityCacel;
     @BindView(R.id.rlNotXiangQingActivity)
     RelativeLayout rlNotXiangQingActivity;
+    private DBUserInvestment dbUserInvestment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +54,13 @@ public class NotXiangQingActivity extends BaseActivity {
     }
 
     public void initData() {
-        DBUserInvestment dbUserInvestment = DBUserInvestmentUtils.getInstance().queryData(getIntent().getLongExtra("NotID", 0));
+        dbUserInvestment = DBUserInvestmentUtils.getInstance().queryData(getIntent().getLongExtra("NotID", 0));
         edtNotXiangQingTitle.setText(dbUserInvestment.getInvestmentCount());
         SimpleDateFormat sdr1 = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
         String CreatedTime1 = sdr1.format(new Date(dbUserInvestment.getCreatTimeAsId()));
         edtNotXiangQingTime.setText(CreatedTime1);
         edtNotXiangQingCount.setText(dbUserInvestment.getSign());
-        tvNotXiangQingActivityTitle.setText(dbUserInvestment.getName()+"详情");
+        tvNotXiangQingActivityTitle.setText(dbUserInvestment.getName() + "详情");
 
     }
 
@@ -70,7 +71,6 @@ public class NotXiangQingActivity extends BaseActivity {
             //处理点击更新点击事件
             case R.id.btnNotXiangQingActivityUpdata:
                 saveNote();
-                RxBus.getDefault().post(new DataSaveEvent(ConstKey.SAVE_DATA_SUCCESS));
                 NotXiangQingActivity.this.finish();
                 break;
             //处理点击删除点击事件
@@ -96,13 +96,11 @@ public class NotXiangQingActivity extends BaseActivity {
         if ("".equals(title) || "".equals(content)) {
             Toast.makeText(NotXiangQingActivity.this, "名称和内容都不能为空", Toast.LENGTH_SHORT).show();
         } else {
-            DBUserInvestment dbUserInvestment = new DBUserInvestment();
-            dbUserInvestment.setCreatTimeAsId(getIntent().getLongExtra("NotID", 0));
             dbUserInvestment.setInvestmentCount(title);
             dbUserInvestment.setSign(content);
             dbUserInvestment.setName(getIntent().getStringExtra("name"));
             DBUserInvestmentUtils.getInstance().updateData(dbUserInvestment);
-            Toast.makeText(NotXiangQingActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NotXiangQingActivity.this, "数据更新成功", Toast.LENGTH_SHORT).show();
             RxBus.getDefault().post(new DataSaveEvent(ConstKey.SAVE_DATA_SUCCESS));
         }
 
