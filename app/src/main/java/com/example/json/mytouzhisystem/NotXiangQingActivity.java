@@ -98,7 +98,6 @@ public class NotXiangQingActivity extends BaseActivity {
         } else {
             dbUserInvestment.setInvestmentCount(title);
             dbUserInvestment.setSign(content);
-            dbUserInvestment.setName(getIntent().getStringExtra("name"));
             DBUserInvestmentUtils.getInstance().updateData(dbUserInvestment);
             Toast.makeText(NotXiangQingActivity.this, "数据更新成功", Toast.LENGTH_SHORT).show();
             RxBus.getDefault().post(new DataSaveEvent(ConstKey.SAVE_DATA_SUCCESS));

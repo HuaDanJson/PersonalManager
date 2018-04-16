@@ -58,10 +58,20 @@ public class MyKindAdapter extends BaseAdapter {
         }
         SimpleDateFormat sdr1 = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
         String CreatedTime1 = sdr1.format(new Date(dbUserInvestmentList.get(position).getCreatTimeAsId()));
-        myViewHolder.tvItemTime.setText("投资时间:" + CreatedTime1);
-        myViewHolder.tvItemTitle.setText("投资项目"+(position+1)+"："+dbUserInvestmentList.get(position).getName());
-        myViewHolder.tvItemCount.setText("投资数目："+dbUserInvestmentList.get(position).getInvestmentCount()+"元");
-        myViewHolder.tvItemSign.setText("投资描述内容："+dbUserInvestmentList.get(position).getSign());
+
+
+        if ("记事本".equals(dbUserInvestmentList.get(position).getName())) {
+            myViewHolder.tvItemTitle.setVisibility(View.GONE);
+            myViewHolder.tvItemTime.setText("时间:" + CreatedTime1);
+            myViewHolder.tvItemCount.setText("标题：" + dbUserInvestmentList.get(position).getInvestmentCount() + "元");
+            myViewHolder.tvItemSign.setText("内容：" + dbUserInvestmentList.get(position).getSign());
+        } else {
+            myViewHolder.tvItemTitle.setVisibility(View.VISIBLE);
+            myViewHolder.tvItemTime.setText("投资时间:" + CreatedTime1);
+            myViewHolder.tvItemTitle.setText("投资项目" + (position + 1) + "：" + dbUserInvestmentList.get(position).getName());
+            myViewHolder.tvItemCount.setText("投资数目：" + dbUserInvestmentList.get(position).getInvestmentCount() + "元");
+            myViewHolder.tvItemSign.setText("投资描述内容：" + dbUserInvestmentList.get(position).getSign());
+        }
         return convertView;
     }
 

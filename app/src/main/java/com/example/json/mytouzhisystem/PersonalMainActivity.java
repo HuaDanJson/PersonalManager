@@ -36,7 +36,7 @@ public class PersonalMainActivity extends BaseActivity {
     @OnClick(R.id.btn_school_personal_main_activity)
     public void schoolClicked() {
         Intent intent = new Intent(this, WebViewActivity.class);
-        intent.putExtra(AppConstant.IntentKey.INTENT_TO_WEBVIEW_ACTIVITY_WITH_URL, "www.buu.edu.cn");
+        intent.putExtra(AppConstant.IntentKey.INTENT_TO_WEBVIEW_ACTIVITY_WITH_URL, "http://www.buu.edu.cn/");
         startActivity(intent);
     }
 }
